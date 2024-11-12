@@ -5,14 +5,24 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import Flow
 import google.auth.transport.requests as google_requests
 
+
 st.set_page_config(page_title="Carpool App", page_icon="🚗")
 
 # Tải thông tin OAuth từ file JSON
 def get_google_auth_flow():
-    flow = Flow.from_client_secrets_file(
-        'client_secrets.json',
+    client_config = {
+        "web": {
+            "client_id": st.secrets["GOOGLE_CLIENT_ID"],
+            "client_secret": st.secrets["GOOGLE_CLIENT_SECRET"],
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://accounts.google.com/o/oauth2/token",
+            "redirect_uris": ["https://your-app-name.streamlit.app"]
+        }
+    }
+    flow = Flow.from_client_config(
+        client_config,
         scopes=['https://www.googleapis.com/auth/userinfo.email'],
-        redirect_uri='http://localhost:8501'
+        redirect_uri="https://your-app-name.streamlit.app"
     )
     return flow
 
