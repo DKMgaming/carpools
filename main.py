@@ -37,7 +37,7 @@ def fetch_user_info():
 
 # Tính toán tuyến đường bằng Google Maps API
 def get_directions(origin, destination):
-    api_key = 'YOUR_GOOGLE_MAPS_API_KEY'
+    api_key = 'AIzaSyASj96AGvX38kmkb18m5d4s1uR4wQ6j9_o'
     url = f'https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&key={api_key}'
     response = requests.get(url)
     return response.json()
