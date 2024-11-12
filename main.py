@@ -22,7 +22,7 @@ def get_google_auth_flow():
     flow = Flow.from_client_config(
         client_config,
         scopes=['https://www.googleapis.com/auth/userinfo.email'],
-        redirect_uri="https://carpools-vietri.streamlit.app/"
+        redirect_uri="https://carpools-vietri.streamlit.app"
     )
     return flow
 
