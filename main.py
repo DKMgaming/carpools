@@ -16,13 +16,13 @@ def get_google_auth_flow():
             "client_secret": st.secrets["GOOGLE_CLIENT_SECRET"],
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://accounts.google.com/o/oauth2/token",
-            "redirect_uris": ["https://your-app-name.streamlit.app"]
+            "redirect_uris": ["https://carpools-vietri.streamlit.app"]
         }
     }
     flow = Flow.from_client_config(
         client_config,
         scopes=['https://www.googleapis.com/auth/userinfo.email'],
-        redirect_uri="https://your-app-name.streamlit.app"
+        redirect_uri="https://carpools-vietri.streamlit.app/"
     )
     return flow
 
