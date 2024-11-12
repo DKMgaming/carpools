@@ -45,7 +45,7 @@ def fetch_user_info():
 
 # Hàm chính của ứng dụng
 def main():
-    st.title("Ứng dụng chia sẻ xe Carpool")
+    st.title("🚗 Ứng dụng chia sẻ xe Carpool")
 
     # Kiểm tra xem người dùng đã đăng nhập chưa
     if 'auth_code' not in st.experimental_get_query_params():
